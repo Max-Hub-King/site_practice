@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Django note {% endblock %}
+
+{% block content %}
+<style>
+    .add_note_container{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    note_text{
+        flex: 1;
+    }
+
+    .add_button{
+        height: 50px;
+        width: 200px;
+        border-radius: 10px;
+        border: 0;
+        margin-left: 350px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: rgb(14, 182, 47);
+        color: white;
+        font-style: bold;
+
+    }
+</style>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="add_note_container">
+        <textarea name='note_text' id="note_text" class="note_text"></textarea>
+        <button name = "D_button" value="D_button" class="add_button">Add note</button>   
+        <li class="list-group-item">{{ note }}</li>
+    </div>
+</form>
+{% endblock %}

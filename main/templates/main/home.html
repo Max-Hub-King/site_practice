@@ -1,9 +1,62 @@
 {% extends 'main/base.html' %}
 
+
+
 {% block title %}
 Home
 {% endblock %}
 
 {% block content %}
-<h1>Home Page</h1>
+
+<style>
+  .base_content{
+    display: flex;
+    }
+  .moduls_list{
+    margin-right: 10px;
+  }
+  .modul_text{
+    margin-right: 70px;
+  }
+  .choose_modul_time{
+    display: flex;
+    margin-top: 20px;
+    margin-left: -150px;
+
+  }
+  .generete_modul{
+    margin-right: 9px;
+  }
+  .modul_text_random{
+    flex: 1;
+    max-width: 257px;
+  }
+</style>
+
+<div class="base_content"> 
+  <div class="moduls_list">
+    <h3 class="modul_text">Django</h3>
+    <h3 class="modul_text">Flask</h3>
+    <h3 class="modul_text">Pygame</h3>
+    <h3 class="modul_text">Git/Linux</h3>
+    <h3 class="modul_text">PyQt5</h3>
+    <h3 class="modul_text">Something new</h3>
+  </div>
+  <div class="hour_list">
+    <h3>{{D_h}} hours</h3>
+    <h3>{{F_h}} hours</h3>
+    <h3>{{P_h}} hours</h3>
+    <h3>{{GL_h}} hours</h3>
+    <h3>{{PQ_h}} hours</h3>
+    <h3>{{SN_h}} hours</h3>
+  </div>
+</div>
+<form action="" method="get">
+  {% csrf_token %}
+  <div class="choose_modul_time">
+    <button type="submit" class="generete_modul" name="generate_button" value="generate_button">Choose randomly</button>
+    <h3 class="modul_text_random">{{modul}}</h3>
+    <h3 class="hours_text">{{hour}} hours</h3>
+  </div>
+</form>
 {% endblock %}

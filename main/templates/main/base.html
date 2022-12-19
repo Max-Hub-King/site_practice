@@ -11,11 +11,11 @@
 			top:0;
 			left:0;
 			background-color:#111;
-			overflow-x: :hidden;
+			overflow-x: hidden;
 			padding-top:20px;
 		}
 
-                .sidenav a {
+        .sidenav a {
 			padding:6px 8px 6px 16px;
 			text-decoration: none;
 			font-size:25px;
@@ -23,14 +23,15 @@
 			display:block;
 		}
 
-                .sidenav a:hover{
+        .sidenav a:hover{
 			color:#f1f1f1;
 		}
 
-                .main{
+        .main{
 			margin-left:160px;
 			padding: 0px 10px;
 		}
+
     </style>
 
 	<meta charset="utf-8">
@@ -46,12 +47,18 @@
 		<a href="/">Home</a>
 		<a href="/create">Create</a>
 		<a href="/2">View</a>
+		<a href="/Django">Django</a>
+		<a href="/Flask">Flask</a>
+		<a href="/Pygame">Pygame</a>
+		<a href="/Linux_Git">Git/Linux</a>
+		<a href="/PyQt5">PyQt5</a>
+		<a href="/Something_new">Something new</a>
 	</div>
 
 	<div id="content" name="content" class="main">
 		<div class="row justify-content-center">
 			<div class="col-8">
-				<h1 class="mt-2">My Site</h1>
+				<h1 class="mt-2">What will you learn Today</h1>
 				<hr class="mt-0 mb-4">
 				{% block content %}
 				{% endblock %}
