@@ -10,31 +10,44 @@
 
     }
 
-    note_text{
-        flex: 1;
-    }
-
     .add_button{
         height: 50px;
         width: 200px;
         border-radius: 10px;
         border: 0;
-        margin-left: 350px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color: rgb(14, 182, 47);
+        background-color: rgb(216, 133, 7);
         color: white;
         font-style: bold;
+        display: flex;
+        margin-bottom: 20px;
+        align-items: center;
+        justify-content: center;
 
+
+    }
+    .list_of_notes{
+        border-style: groove;
+        border-radius: 5px;
+        color: white;
+        white-space: pre-wrap;
+        
+    }
+    .format_of_write_data{
+        display: flex;
+        max-height: 100px;
+        width: 100%;
+        border-radius: 20px;
     }
 </style>
 
 <form action="" method="POST">
     {% csrf_token %}
     <div class="add_note_container">
-        <textarea name='note_text' id="note_text" class="note_text"></textarea>
+        {{ form.as_p }}
         <button name = "D_button" value="D_button" class="add_button">Add note</button>   
-        <li class="list-group-item">{{ note }}</li>
+        {% for instance in object_list %}
+        <ul class = "list_of_notes">{{ instance.data_django }}</ul>
+        {% endfor %}
     </div>
 </form>
 {% endblock %}

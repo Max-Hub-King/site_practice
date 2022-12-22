@@ -24,11 +24,22 @@ class Hours(models.Model):
 	PyQt5_hour = models.IntegerField(default=0)
 	Some_new_hour = models.IntegerField(default=0)
 
-	def __str__(self):
-		return self.Django_hour, self.Flusk_hour, self.Pygame_hour, self.Git_Linux_hour, self.PyQt5_hour, self.Some_new_hour
 
-class Notes(models.Model):
-	data = models.CharField(max_length=10000)
+class NotesDjango(models.Model):
+	data_django = models.CharField(max_length=10000)
 
-	def __str__(self):
-		return self.data
+class NotesFlask(models.Model):
+	data_flask = models.CharField(max_length=10000)
+
+class NotesPygame(models.Model):
+	data_pygame = models.CharField(max_length=10000)
+
+class NotesGL(models.Model):
+	data_git_linux = models.CharField(max_length=10000)
+
+class NotesPyqt5(models.Model):
+	data_pyqt5 = models.CharField(max_length=10000)
+
+class NotesNew(models.Model):
+	data_new = models.CharField(max_length=10000)
+
